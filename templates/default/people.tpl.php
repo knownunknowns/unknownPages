@@ -1,5 +1,5 @@
 <?php
-$users = $someClasses =\Idno\Entities\ActivityStreamPost::getFromX("Idno\Entities\User");
+$users = $someClasses =\Idno\Entities\ActivityStreamPost::getFromX("Idno\Entities\User",array(),array(),100);
 ?>
 <table>
     <tr>
