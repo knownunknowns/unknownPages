@@ -4,7 +4,6 @@ namespace IdnoPlugins\unknownPages\Pages {
         function getContent(){
                 $t = \Idno\Core\Idno::site()->template();
                 $t->body  = $t->draw('front');
-                $t->title = "testing testing";
                 $t->drawPage();
         }
     }
