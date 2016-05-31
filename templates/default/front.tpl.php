@@ -1,7 +1,7 @@
 <div class="landing">
     <h1>
         Known <br />
-        <a href="#tags">Unknowns</a>
+        <a id="tagsLink" href="#tags">Unknowns</a>
     </h1>
     <p class="description">
         Design is not rigid.<br />
