@@ -16,7 +16,7 @@
 <div id="tags" class="tagCloud">
 <?php
 $allTypes =  \Idno\Common\ContentType::getRegisteredClasses();
-$someClasses =\Idno\Entities\ActivityStreamPost::getFromX($allTypes);
+$someClasses = \Idno\Entities\ActivityStreamPost::getFromX($allTypes,array(),array(),1000);
 $allTags = array();
 forEach ($someClasses as $contentItem){
     $itemTags = $contentItem->getTags();
@@ -32,6 +32,18 @@ forEach ($someClasses as $contentItem){
     }
 };
 ?>
+<script>
+searchIndex=[
+    <?php forEach ($allTags as $tag => $uses){?>
+        {"string":"<?=$tag?>",uses: <?=$uses?>,url:"/tag/<?=$tag?>"},
+    <?php };?>
+    <?php $users = $someClasses =\Idno\Entities\ActivityStreamPost::getFromX("Idno\Entities\User",array(),array(),100);?>
+    <?php forEach ($users as $user){?>
+        {"string":"<?=$user->getName()?>" ,uses: 10,url:"<?=$user->getUrl()?>"},
+        {"string":"<?=$user->projTitle?>" ,uses: 10,url:"<?=$user->getUrl()?>"},
+    <?php };?>
+]
+</script>
 <h2>
     Tags
 </h2>
@@ -42,4 +54,3 @@ forEach ($someClasses as $contentItem){
         </li>
     <?php };?>
 <ul>
-

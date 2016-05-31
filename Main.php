@@ -6,6 +6,9 @@ namespace IdnoPlugins\UnknownPages{
             \Idno\Core\Idno::site()->addPageHandler('/', '\IdnoPlugins\unknownPages\Pages\landing');
             //people
             \Idno\Core\Idno::site()->addPageHandler('/people', '\IdnoPlugins\unknownPages\Pages\people');
+            //static pages
+            \Idno\Core\Idno::site()->addPageHandler('/info', '\IdnoPlugins\unknownPages\Pages\info');
+            \Idno\Core\Idno::site()->addPageHandler('/show', '\IdnoPlugins\unknownPages\Pages\show');
         }
     }
  }
