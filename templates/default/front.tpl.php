@@ -24,10 +24,12 @@ forEach ($someClasses as $contentItem){
         if (substr($tag,0,1) == "#"){
             $tag = substr($tag,1);
         }
-        if ($allTags[$tag]){
-            $allTags[$tag] += 1;
-        }else{
-            $allTags[$tag] = 1;
+        if (!((strlen($tag) ==6)and ctype_xdigit($tag))){
+            if ($allTags[$tag]){
+                $allTags[$tag] += 1;
+            }else{
+                $allTags[$tag] = 1;
+            }
         }
     }
 };
