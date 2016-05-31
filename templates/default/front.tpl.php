@@ -49,7 +49,7 @@ searchIndex=[
 </h2>
 <ul>
     <?php forEach ($allTags as $tag => $uses){?>
-        <li style="font-size:<?=$uses*100.0/2?>%" data-uses="<?=$uses?>" class="tagcolum-<?=rand(0,12)?>" >
+        <li style="font-size:<?=pow($uses,0.5)*100.0/2?>%" data-uses="<?=$uses?>" class="tagcolum-<?=rand(0,12)?>" >
             <a href="/tag/<?=$tag?>" ><?=$tag?></a>
         </li>
     <?php };?>
